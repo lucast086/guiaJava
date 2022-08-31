@@ -33,11 +33,4 @@ public class ejercicio11 {
         }
         return result;
     }
-    private static String codificar(String s, int a){
-        s.replace('a','@');
-        s.replace('e','#');
-        s.replace('i','$');
-        s.replace('o','%');
-        s.replace('u','*');
-    }
 }
