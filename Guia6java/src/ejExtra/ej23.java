@@ -16,7 +16,7 @@ public class ej23 {
     // funcion que cargue la matriz con las palabras ingresadas por el usuario
     static void AddWord(String[][] m){
         Scanner leer = new Scanner(System.in);
-        Pair<Integer,Integer> coord = new Pair<>(-1,-1);
+        int p1 = -1, p2 = -1;
 
         int maxPal = 5;
         Random r = new Random();
@@ -27,11 +27,13 @@ public class ej23 {
             String palabra = leer.next();
             if (Isvalid(palabra)){
                 do {
-                    coord.add(r.nextInt(0, 20), r.nextInt(0, 20));
-                    System.out.println(" c1 "+coord.getValue0()+" c2 "+coord.getValue1());
-                } while((coord.getValue1() >= 20 - palabra.length()) || isUsed(coord.getValue0(), posicionesUsadas));
-                    posicionesUsadas[i] = coord.getValue0();
-                    insertWord(m,palabra,coord);
+                    p1 = r.nextInt(0, 20);
+                    p2 = r.nextInt(0, 20);
+                    System.out.println(" c1 "+p1+" c2 "+p2);
+                    //BUCLE ININITO ACA
+                } while((p2 >= 20 - palabra.length()) || isUsed(p1, posicionesUsadas));
+                    posicionesUsadas[i] = p1;
+                    insertWord(m,palabra,p1,p2);
 
                     //generar una posicion aleatoria, verificar que no haya usado ya esa fila, luego insertar la palabra
             } else {
@@ -52,12 +54,11 @@ public class ej23 {
     }
 
     // dada una matriz un par de coordenadas y una palabra, lo que haces es insertar esa palabra a partir de las coordenadas dadas.
-    static void insertWord (String[][] m, String pl,Pair<Integer,Integer> coord){
-        int i = coord.getValue0();
-            for (int j = coord.getValue1(); j < m[i].length ; j++){
-                for(int k = 0 ; k < pl.length() ; k++){
-                    m[i][j] = pl.substring(k,k+1);
-                }
+    static void insertWord (String[][] m, String pl,int pos1, int pos2){
+        int j = pos2;
+            for (int k = 0; k < pl.length() ; k++){
+                m[pos1][j] = pl.substring(k,k+1);
+                j++;
             }
     }
 
