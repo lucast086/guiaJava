@@ -8,8 +8,8 @@ public class ej15 {
         for (int i = 0 ; i < ar.length ; i++){
             ar[i] = i+1;
         }
-        for (int i : ar) {
-            System.out.println(i);
+        for (int i = 99 ; i > 0 ; i--) {
+            System.out.println(ar[i]);
         }
 
 

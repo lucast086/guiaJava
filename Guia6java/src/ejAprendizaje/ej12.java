@@ -13,7 +13,7 @@ public class ej12 {
         do {
             System.out.println("ingrese una frase");
             x = leer.nextLine();
-            if (x.toUpperCase().startsWith("X") && x.toUpperCase().endsWith("O") && x.length() == 5) c++;
+            if (x.toUpperCase().startsWith("X") && x.toUpperCase().endsWith("O") && x.length() <= 5) c++;
             else if (!x.equals(fde)) i++;
 
         } while (!x.equalsIgnoreCase(fde));
