@@ -15,9 +15,6 @@ public class ej17 {
             //arr[i] = Math.toIntExact(Math.round(Math.random() * (99999) + 1));  // Valor entre M y N, ambos incluidos.
 
         }
-        for (int i = 0 ; i < arr.length ; i++){
-            System.out.println(arr[i]);
-        }
 
         //contabilizo los numeros
         for (Integer a: arr) {
@@ -39,6 +36,5 @@ public class ej17 {
         System.out.println("NUMEROS CON 3 DIGITO: "+d3);
         System.out.println("NUMEROS CON 4 DIGITO: "+d4);
         System.out.println("NUMEROS CON 5 DIGITO: "+d5);
-
     }
 }
