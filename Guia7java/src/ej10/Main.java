@@ -24,4 +24,5 @@ public class Main {
         System.out.println("ARREGLO B LLENO: ");
         System.out.println(Arrays.toString(B));
     }
+
 }

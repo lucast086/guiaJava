@@ -19,15 +19,15 @@ public class AhorcadoService {
 
             do {
                 limpiarConsola();
-                System.out.println("*************");
-                System.out.println("*  AHORCADO *");
-                System.out.println("*************");
-                System.out.println(" ");
-                System.out.println("*       MENU       *");
-                System.out.println("* 1- INICIAR JUEGO *");
-                System.out.println("* 2- CONFIGURACION *");
-                System.out.println("* 3- INSTRUCCIONES *");
-                System.out.println("* 4- SALIR         *");
+                System.out.println("  ********************");
+                System.out.println("  *     AHORCADO     *");
+                System.out.println("  ********************");
+                System.out.println("  *                  *");
+                System.out.println("  *       MENU       *");
+                System.out.println("  * 1- INICIAR JUEGO *");
+                System.out.println("  * 2- CONFIGURACION *");
+                System.out.println("  * 3- INSTRUCCIONES *");
+                System.out.println("  * 4- SALIR         *");
                 opt = leer.nextInt();
             }while (!isOption(opt));
             switch (opt){
@@ -47,7 +47,12 @@ public class AhorcadoService {
     este metodo explica como se juega el ahorcado
      */
     private void instrucciones() {
-        System.out.println("estas son las instrucciones del juego");
+        System.out.println("MENU CONFIGURACION");
+        System.out.println(" en este menu podra elegir la dificultad, las palabras faciles son de 4 o 5 letras y la cantidad" +
+                            "de intentos es el triple del tamaño de la palabra ");
+        System.out.println(" en la seccion personalizada puede elegir la palabra secreta y la cantidad de oportunidades para adivinar.");
+        System.out.println("si no configura su juego antes de iniciar, este se pondra por defecto en normal.");
+        System.out.println("gracias ");
         System.out.println("presione enter para volver al menu anterior");
         String a = leer.next();
     }
@@ -68,7 +73,7 @@ public class AhorcadoService {
         Arrays.fill(pal,"_");
         do {
             limpiarConsola();
-            control(game);
+           // control(game);
             System.out.println("PALABRA A ADIVINAR");
             System.out.println("Longitud: " + game.longitud());
             System.out.println("Letras encontradas: " + game.getEncontradas());
@@ -261,15 +266,15 @@ public void control(Ahorcado game){
 
             do {
                 limpiarConsola();
-                System.out.println("*************");
-                System.out.println("*  AHORCADO *");
-                System.out.println("*************");
+                System.out.println("      *************");
+                System.out.println("      *  AHORCADO *");
+                System.out.println("      *************");
                 System.out.println(" ");
-                System.out.println("*   CONFIGURACION   *");
-                System.out.println("* 1- FACIL          *");
-                System.out.println("* 2- NORMAL         *");
-                System.out.println("* 3- DIFICIL        *");
-                System.out.println("* 4- PERSONALIZADO  *");
+                System.out.println("  *   CONFIGURACION   *");
+                System.out.println("  * 1- FACIL          *");
+                System.out.println("  * 2- NORMAL         *");
+                System.out.println("  * 3- DIFICIL        *");
+                System.out.println("  * 4- PERSONALIZADO  *");
                 opt = leer.nextInt();
             }while (!isOption(opt));
             switch (opt){
@@ -283,8 +288,12 @@ public void control(Ahorcado game){
                     game.setJugadasMaximas(10);
                     break;
                 case 4:
+                    System.out.println("CONFIGURACION PERSONALIZADA. PRES ENTER PARA CONTINUAR");
+                    String palabra = leer.nextLine();
                     System.out.println("Ingrese la palabra a adivinar");
-                    String[] word = leer.next().split("");
+                    palabra = leer.nextLine();
+                    System.out.println(palabra+" es la palabra elegida");
+                    String[] word = palabra.split("");
                     game.setPalabra(word);
                     System.out.println("Ingrese la cantidad maxima de jugadas");
                     int x = leer.nextInt();
