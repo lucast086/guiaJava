@@ -11,8 +11,8 @@ import java.util.Scanner;
 public class Main {
     static Scanner leer = new Scanner(System.in);
     static Servicios service = new Servicios();
-    static List<Persona> personas = new ArrayList<>(2);
-    static List<Perro> perros = new ArrayList<>(2);
+    static List<Persona> personas = new ArrayList<>();
+    static List<Perro> perros = new ArrayList<>();
 
     public static void main (String[]args){
         System.out.println("creacion de personas");
